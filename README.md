@@ -1,6 +1,6 @@
-# nautical_nodes
+# Nautical Nodes
 
-A new Flutter project.
+Traverse the high seas of social media interaction with Nautical Nodes.
 
 ## Getting Started
 
