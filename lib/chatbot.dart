@@ -13,9 +13,13 @@ class Chatbot extends StatefulWidget {
 
 class _ChatbotState extends State<Chatbot> {
   bool loading = false;
-  List<String> responses = [];
+  List<String> messages = [];
 
   void chat(String message) async {
+    setState(() {
+      loading = true;
+    });
+
     final url = Uri.parse('http://localhost:11434/api/generate');
     final headers = {'Content-Type': 'application/json'};
     final body = json.encode({
@@ -26,7 +30,11 @@ class _ChatbotState extends State<Chatbot> {
 
     final result = await http.post(url, headers: headers, body: body);
     final response = jsonDecode(result.body)['response'];
-    responses.add(response);
+
+    setState(() {
+      messages.add(response);
+      loading = false;
+    });
   }
 
   @override
@@ -49,6 +57,12 @@ class _ChatbotState extends State<Chatbot> {
             Opacity(
               opacity: loading ? 1 : 0,
               child: const CircularProgressIndicator(),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => Text(messages[index]),
+                itemCount: messages.length,
+              ),
             ),
           ],
         ),
