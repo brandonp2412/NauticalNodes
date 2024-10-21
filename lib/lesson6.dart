@@ -53,7 +53,9 @@ class _RestRequestsState extends State<RestRequests> {
         Text("Name: $name"),
         TextButton(onPressed: getName, child: const Text("Tap to get")),
         Opacity(
-            opacity: loading ? 1 : 0, child: const CircularProgressIndicator()),
+          opacity: loading ? 1 : 0,
+          child: const CircularProgressIndicator(),
+        ),
       ],
     );
   }
