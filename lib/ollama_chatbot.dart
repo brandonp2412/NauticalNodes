@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-// WARNING! Reading this is cheating.
 class Chatbot extends StatefulWidget {
   const Chatbot({super.key});
 
