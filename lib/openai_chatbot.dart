@@ -27,7 +27,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
 
   void setOpenAiKey() async {
     await dotenv.load();
-    String? openAiKey = dotenv.env['OPENAI_KEY'];
+    openAiKey = dotenv.env['OPENAI_KEY'];
     if (openAiKey == null) throw "Set your OPENAI_KEY in .env";
   }
 
