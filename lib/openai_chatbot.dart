@@ -17,18 +17,22 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
   List<String> answers = [];
   final textController = TextEditingController();
   final scrollController = ScrollController();
+  String? openAiKey;
 
   @override
   void initState() {
     super.initState();
+    setOpenAiKey();
+  }
+
+  void setOpenAiKey() async {
+    await dotenv.load();
+    String? openAiKey = dotenv.env['OPENAI_KEY'];
+    if (openAiKey == null) throw "Set your OPENAI_KEY in .env";
   }
 
   Future<String> completions(String message) async {
     final url = Uri.parse('https://api.openai.com/v1/chat/completions');
-
-    await dotenv.load();
-    String? openAiKey = dotenv.env['OPENAI_KEY'];
-    if (openAiKey == null) throw "Set your OPENAI_KEY in .env";
 
     final headers = {
       'Content-Type': 'application/json',
@@ -45,7 +49,6 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
 
     final response = await http.post(url, headers: headers, body: body);
     final json = jsonDecode(response.body);
-
     return json['choices'][0]['message']['content'];
   }
 
