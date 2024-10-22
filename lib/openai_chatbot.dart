@@ -38,7 +38,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
     var body = jsonEncode({
       'model': 'gpt-4o',
       'messages': [
-        {'role': 'system', 'content': 'You are a helpful assistant.'},
+        {'role': 'system', 'content': 'You are a pirate.'},
         {'role': 'user', 'content': message},
       ],
     });
