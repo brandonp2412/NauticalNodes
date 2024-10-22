@@ -48,7 +48,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
     });
 
     final response = await http.post(url, headers: headers, body: body);
-    final json = jsonDecode(response.body);
+    Map<String, dynamic> json = jsonDecode(response.body);
     return json['choices'][0]['message']['content'];
   }
 
@@ -66,9 +66,10 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
     );
 
     final answer = await completions(question);
+    final decodedAnswer = utf8.decode(answer.codeUnits);
 
     setState(() {
-      answers.add(answer);
+      answers.add(decodedAnswer);
     });
 
     scrollController.animateTo(
@@ -130,7 +131,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
               label: const Text("Clear chat"),
             ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: textController,
               textInputAction: TextInputAction.send,
