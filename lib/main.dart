@@ -6,7 +6,6 @@ import 'package:nautical_nodes/lesson3.dart';
 import 'package:nautical_nodes/lesson4.dart';
 import 'package:nautical_nodes/lesson5.dart';
 import 'package:nautical_nodes/lesson6.dart';
-import 'package:nautical_nodes/openai_chatbot.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OpenaiChatbot(),
+      home: const Lesson1(),
     );
   }
 }
