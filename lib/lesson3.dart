@@ -10,6 +10,12 @@ class Lesson3 extends StatefulWidget {
 class _Lesson3State extends State<Lesson3> {
   int tapped = 0;
 
+  void increase() {
+    setState(() {
+      tapped++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +30,7 @@ class _Lesson3State extends State<Lesson3> {
             child: Text("You tapped $tapped times!"),
           ),
           TextButton(
-            onPressed: () {
-              setState(() {
-                tapped++;
-              });
-            },
+            onPressed: increase,
             child: const Text("Increase"),
           ),
         ],

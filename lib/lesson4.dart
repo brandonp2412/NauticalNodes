@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 class Lesson4 extends StatelessWidget {
   const Lesson4({super.key});
 
+  void goToQuiz1(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const Lesson4Quiz1()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Navigation")),
       body: Center(
         child: TextButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const Lesson4Quiz1()),
-            );
-          },
+          onPressed: () => goToQuiz1(context),
           child: const Text("Tap to see quiz #1"),
         ),
       ),
@@ -214,6 +216,13 @@ class Lesson4Quiz3 extends StatelessWidget {
 
   const Lesson4Quiz3({super.key, required this.name});
 
+  void goBack(BuildContext context) {
+    Navigator.pop(
+      context,
+      "Arr, it’s time to drop anchor and sail off the edge of the digital map. Fair winds and following seas to ye! ",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -225,12 +234,7 @@ class Lesson4Quiz3 extends StatelessWidget {
           children: [
             const Text("Ye be far away from land. Best be on yer way..."),
             TextButton(
-              onPressed: () {
-                Navigator.pop(
-                  context,
-                  "Arr, it’s time to drop anchor and sail off the edge of the digital map. Fair winds and following seas to ye! ",
-                );
-              },
+              onPressed: () => goBack(context),
               child: const Text("Off i go"),
             ),
           ],
