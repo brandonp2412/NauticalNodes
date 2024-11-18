@@ -145,8 +145,8 @@ class CenterExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      // Now the dog is in the center.
-      child: Image.network("https://www.codesail.co.nz/dog.jpg"),
+      // Now the cat is in the center.
+      child: Image.network("https://www.codesail.co.nz/cat.webp"),
     );
   }
 }
