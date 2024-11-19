@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoadingEllipsis extends StatefulWidget {
-  const LoadingEllipsis({super.key});
+  LoadingEllipsis({super.key});
 
   @override
   createState() => _LoadingEllipsisState();
@@ -16,7 +16,7 @@ class _LoadingEllipsisState extends State<LoadingEllipsis>
   void initState() {
     super.initState();
     _controller =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this)
+        AnimationController(duration: Duration(seconds: 1), vsync: this)
           ..repeat();
     _dotsAnimation = StepTween(begin: 0, end: 3).animate(_controller);
   }
@@ -35,7 +35,7 @@ class _LoadingEllipsisState extends State<LoadingEllipsis>
         String dots = '.' * (_dotsAnimation.value + 1);
         return Text(
           dots,
-          style: const TextStyle(fontSize: 24),
+          style: TextStyle(fontSize: 24),
         );
       },
     );

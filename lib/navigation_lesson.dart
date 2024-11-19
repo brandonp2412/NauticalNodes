@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class Lesson4 extends StatelessWidget {
-  const Lesson4({super.key});
+class NavigationLesson extends StatelessWidget {
+  NavigationLesson({super.key});
 
   void goToQuiz1(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => const Lesson4Quiz1()),
+      MaterialPageRoute(builder: (context) => NavigationQuiz()),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Navigation")),
+      appBar: AppBar(title: Text("Navigation")),
       body: Center(
         child: TextButton(
           onPressed: () => goToQuiz1(context),
-          child: const Text("Tap to see quiz #1"),
+          child: Text("Tap to see quiz #1"),
         ),
       ),
     );
@@ -75,14 +75,14 @@ class Lesson4 extends StatelessWidget {
 //
 //
 
-class Lesson4Quiz1 extends StatelessWidget {
-  const Lesson4Quiz1({super.key});
+class NavigationQuiz extends StatelessWidget {
+  NavigationQuiz({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Quiz 1")),
-      body: const Center(child: Text("How do we navigate to quiz 2?")),
+      appBar: AppBar(title: Text("Navigation quiz")),
+      body: Center(child: Text("How do we navigate to quiz 2?")),
     );
   }
 }
@@ -139,14 +139,14 @@ class Lesson4Quiz1 extends StatelessWidget {
 //
 //
 
-class Lesson4Quiz2 extends StatelessWidget {
-  const Lesson4Quiz2({super.key});
+class Quiz2 extends StatelessWidget {
+  Quiz2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Quiz 2")),
-      body: const Center(
+      appBar: AppBar(title: Text("Quiz 2")),
+      body: Center(
         child: Column(
           children: [
             Text("Welcome and congrats! You figured it out you sly dog..."),
@@ -211,10 +211,10 @@ class Lesson4Quiz2 extends StatelessWidget {
 //
 //
 
-class Lesson4Quiz3 extends StatelessWidget {
+class Quiz3 extends StatelessWidget {
   final String name;
 
-  const Lesson4Quiz3({super.key, required this.name});
+  Quiz3({super.key, required this.name});
 
   void goBack(BuildContext context) {
     Navigator.pop(
@@ -232,10 +232,10 @@ class Lesson4Quiz3 extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            const Text("Ye be far away from land. Best be on yer way..."),
+            Text("Ye be far away from land. Best be on yer way..."),
             TextButton(
               onPressed: () => goBack(context),
-              child: const Text("Off i go"),
+              child: Text("Off i go"),
             ),
           ],
         ),

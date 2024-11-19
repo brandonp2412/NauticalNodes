@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:nautical_nodes/ollama_chatbot.dart';
-import 'package:nautical_nodes/lesson1.dart';
-import 'package:nautical_nodes/lesson2.dart';
-import 'package:nautical_nodes/lesson3.dart';
-import 'package:nautical_nodes/lesson4.dart';
-import 'package:nautical_nodes/lesson5.dart';
-import 'package:nautical_nodes/lesson6.dart';
+import 'package:nautical_nodes/widgets_lesson.dart';
+import 'package:nautical_nodes/actions_lesson.dart';
+import 'package:nautical_nodes/state_lesson.dart';
+import 'package:nautical_nodes/navigation_lesson.dart';
+import 'package:nautical_nodes/packages_lesson.dart';
+import 'package:nautical_nodes/internet_lesson.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Lesson1(),
+      home: WidgetsLesson(),
     );
   }
 }

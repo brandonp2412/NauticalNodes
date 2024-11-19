@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:nautical_nodes/loading_ellipsis.dart';
 
 class OpenaiChatbot extends StatefulWidget {
-  const OpenaiChatbot({super.key});
+  OpenaiChatbot({super.key});
 
   @override
   State<OpenaiChatbot> createState() => _OpenaiChatbotState();
@@ -61,7 +61,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
 
     scrollController.animateTo(
       scrollController.position.maxScrollExtent,
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: 2),
       curve: Curves.easeOut,
     );
 
@@ -74,7 +74,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
 
     scrollController.animateTo(
       scrollController.position.maxScrollExtent,
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: 2),
       curve: Curves.easeOut,
     );
 
@@ -86,7 +86,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Nautical nodes",
           style: TextStyle(color: Colors.white),
         ),
@@ -110,9 +110,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
                     ),
                     ListTile(
                       selected: false,
-                      title: answer != null
-                          ? Text(answer)
-                          : const LoadingEllipsis(),
+                      title: answer != null ? Text(answer) : LoadingEllipsis(),
                     ),
                   ],
                 );
@@ -127,11 +125,11 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
                   answers = [];
                 });
               },
-              icon: const Icon(Icons.delete),
-              label: const Text("Clear chat"),
+              icon: Icon(Icons.delete),
+              label: Text("Clear chat"),
             ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: TextField(
               controller: textController,
               textInputAction: TextInputAction.send,
@@ -139,7 +137,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
                 labelText: "Enter a message...",
                 suffixIcon: IconButton(
                   onPressed: () => ask(textController.text),
-                  icon: const Icon(Icons.send),
+                  icon: Icon(Icons.send),
                 ),
               ),
               onSubmitted: ask,

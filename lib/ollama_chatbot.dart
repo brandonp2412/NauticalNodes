@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Chatbot extends StatefulWidget {
-  const Chatbot({super.key});
+  Chatbot({super.key});
 
   @override
   State<Chatbot> createState() => _ChatbotState();
@@ -40,14 +40,14 @@ class _ChatbotState extends State<Chatbot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Nautical node - Chatbot"),
+        title: Text("Nautical node - Chatbot"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Center(
+            Center(
               child: Text("Hi I'm a chatbot. Type to see my responses..."),
             ),
             TextField(
@@ -55,7 +55,7 @@ class _ChatbotState extends State<Chatbot> {
             ),
             Opacity(
               opacity: loading ? 1 : 0,
-              child: const CircularProgressIndicator(),
+              child: CircularProgressIndicator(),
             ),
             Expanded(
               child: ListView.builder(

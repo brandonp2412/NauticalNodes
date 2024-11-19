@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Lesson1 extends StatelessWidget {
-  const Lesson1({super.key});
+class WidgetsLesson extends StatelessWidget {
+  WidgetsLesson({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lesson 1"),
+        title: Text("Widgets"),
       ),
-      body: const CenterExample(),
+      body: CenterExample(),
     );
   }
 }
@@ -48,11 +48,11 @@ class Lesson1 extends StatelessWidget {
 //
 //
 class TextExample extends StatelessWidget {
-  const TextExample({super.key});
+  TextExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Text("This gets placed right at the beginning.");
+    return Text("This gets placed right at the beginning.");
   }
 }
 
@@ -91,11 +91,11 @@ class TextExample extends StatelessWidget {
 //
 
 class BigTextExample extends StatelessWidget {
-  const BigTextExample({super.key});
+  BigTextExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
+    return Text(
       "This text is very big!",
       style: TextStyle(fontSize: 32),
     );
@@ -140,7 +140,7 @@ class BigTextExample extends StatelessWidget {
 //
 
 class CenterExample extends StatelessWidget {
-  const CenterExample({super.key});
+  CenterExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -189,14 +189,14 @@ class CenterExample extends StatelessWidget {
 //
 
 class CenteredListExample extends StatelessWidget {
-  const CenteredListExample({super.key});
+  CenteredListExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
         shrinkWrap: true,
-        children: const [
+        children: [
           Center(child: Text("These items")),
           Center(child: Text("Are placed")),
           Center(child: Text("One after the other...")),
@@ -245,12 +245,12 @@ class CenteredListExample extends StatelessWidget {
 //
 
 class ListExample extends StatelessWidget {
-  const ListExample({super.key});
+  ListExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
+      children: [
         Text("These items"),
         Text("Are placed"),
         Text("One after the other..."),
@@ -299,11 +299,11 @@ class ListExample extends StatelessWidget {
 //
 
 class ColumnExample extends StatelessWidget {
-  const ColumnExample({super.key});
+  ColumnExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Text("Columns aren't scrollable"),
         Text("So use them for fixed lists"),

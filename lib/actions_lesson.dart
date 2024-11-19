@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Lesson2 extends StatelessWidget {
-  const Lesson2({super.key});
+class ActionsLesson extends StatelessWidget {
+  ActionsLesson({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lesson 2 - Actions"),
+        title: Text("Actions lesson"),
       ),
-      body: const Center(
-        child: Lesson2Quiz1(),
+      body: Center(
+        child: TapQuiz(),
       ),
     );
   }
@@ -50,7 +50,7 @@ class Lesson2 extends StatelessWidget {
 //
 
 class BasicButton extends StatelessWidget {
-  const BasicButton({super.key});
+  BasicButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class BasicButton extends StatelessWidget {
       onPressed: () {
         showToast(context, "Hello!");
       },
-      child: const Text("Say hi"),
+      child: Text("Say hi"),
     );
   }
 }
@@ -97,7 +97,7 @@ class BasicButton extends StatelessWidget {
 //
 
 class SplittingOutActions extends StatelessWidget {
-  const SplittingOutActions({super.key});
+  SplittingOutActions({super.key});
 
   void sayHello(BuildContext context) {
     showToast(context, "Why hello there!");
@@ -107,7 +107,7 @@ class SplittingOutActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => sayHello(context),
-      child: const Text("Say hi"),
+      child: Text("Say hi"),
     );
   }
 }
@@ -154,11 +154,11 @@ class SplittingOutActions extends StatelessWidget {
 //
 //
 
-class Lesson2Quiz1 extends StatelessWidget {
-  const Lesson2Quiz1({super.key});
+class TapQuiz extends StatelessWidget {
+  TapQuiz({super.key});
 
   void sayHello(BuildContext context) {
-    const name = 'Mr. beast';
+    var name = 'Mr. beast';
     showToast(context, 'Hi my name is $name');
   }
 
@@ -167,7 +167,7 @@ class Lesson2Quiz1 extends StatelessWidget {
     // What is shown on tap?
     return TextButton(
       onPressed: () => sayHello(context),
-      child: const Text("Do greeting"),
+      child: Text("Do greeting"),
     );
   }
 }
@@ -214,15 +214,15 @@ class Lesson2Quiz1 extends StatelessWidget {
 //
 //
 
-class Lesson2Quiz2 extends StatelessWidget {
-  const Lesson2Quiz2({super.key});
+class NameQuiz extends StatelessWidget {
+  NameQuiz({super.key});
 
   @override
   Widget build(BuildContext context) {
     // Make this button say your name.
     return TextButton(
       onPressed: () {},
-      child: const Text("Say my name"),
+      child: Text("Say my name"),
     );
   }
 }
@@ -269,11 +269,11 @@ class Lesson2Quiz2 extends StatelessWidget {
 //
 //
 
-class Lesson2Quiz3 extends StatelessWidget {
-  const Lesson2Quiz3({super.key});
+class BrokenQuiz extends StatelessWidget {
+  BrokenQuiz({super.key});
 
   void sayHello(BuildContext context) {
-    const name = 'Mr. beast';
+    var name = 'Mr. beast';
 
     if (name == 'Brandon') {
       showToast(context, "Hello sir.");
@@ -286,7 +286,7 @@ class Lesson2Quiz3 extends StatelessWidget {
     // Fix it.
     return TextButton(
       onPressed: () => sayHello(context),
-      child: const Text("Say my name"),
+      child: Text("Say my name"),
     );
   }
 }

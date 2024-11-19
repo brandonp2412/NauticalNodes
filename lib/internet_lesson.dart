@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Lesson6 extends StatelessWidget {
-  const Lesson6({super.key});
+class InternetLesson extends StatelessWidget {
+  InternetLesson({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Lesson 6 - Internet")),
-      body: const Center(
+      appBar: AppBar(title: Text("Internet lesson")),
+      body: Center(
         child: RestRequests(),
       ),
     );
@@ -18,7 +18,7 @@ class Lesson6 extends StatelessWidget {
 }
 
 class RestRequests extends StatefulWidget {
-  const RestRequests({super.key});
+  RestRequests({super.key});
 
   @override
   State<RestRequests> createState() => _RestRequestsState();
@@ -51,10 +51,10 @@ class _RestRequestsState extends State<RestRequests> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Name: $name"),
-        TextButton(onPressed: getName, child: const Text("Tap to get")),
+        TextButton(onPressed: getName, child: Text("Tap to get")),
         Opacity(
           opacity: loading ? 1 : 0,
-          child: const CircularProgressIndicator(),
+          child: CircularProgressIndicator(),
         ),
       ],
     );
@@ -104,14 +104,14 @@ class _RestRequestsState extends State<RestRequests> {
 //
 //
 
-class Lesson6Quiz1 extends StatefulWidget {
-  const Lesson6Quiz1({super.key});
+class UserQuiz extends StatefulWidget {
+  UserQuiz({super.key});
 
   @override
-  State<Lesson6Quiz1> createState() => _Lesson6Quiz1State();
+  State<UserQuiz> createState() => _UserQuizState();
 }
 
-class _Lesson6Quiz1State extends State<Lesson6Quiz1> {
+class _UserQuizState extends State<UserQuiz> {
   @override
   Widget build(BuildContext context) {
     // Get + display a random users gender from https://randomuser.me/api/

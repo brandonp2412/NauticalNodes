@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Lesson3 extends StatefulWidget {
-  const Lesson3({super.key});
+class StateLesson extends StatefulWidget {
+  StateLesson({super.key});
 
   @override
-  State<Lesson3> createState() => _Lesson3State();
+  State<StateLesson> createState() => _StateLessonState();
 }
 
-class _Lesson3State extends State<Lesson3> {
+class _StateLessonState extends State<StateLesson> {
   int tapped = 0;
 
   void increase() {
@@ -20,18 +20,18 @@ class _Lesson3State extends State<Lesson3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lesson 3 - State"),
+        title: Text("State lesson"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network("https://www.codesail.co.nz/dog2.jpg"),
+          Image.network("https://www.codesail.co.nz/walrus.webp"),
           Center(
             child: Text("You tapped $tapped times!"),
           ),
           TextButton(
             onPressed: increase,
-            child: const Text("Increase"),
+            child: Text("Increase"),
           ),
         ],
       ),
