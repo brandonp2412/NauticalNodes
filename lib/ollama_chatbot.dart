@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Chatbot extends StatefulWidget {
-  Chatbot({super.key});
+class OllamaChatbot extends StatefulWidget {
+  OllamaChatbot({super.key});
 
   @override
-  State<Chatbot> createState() => _ChatbotState();
+  State<OllamaChatbot> createState() => _OllamaChatbotState();
 }
 
-class _ChatbotState extends State<Chatbot> {
+class _OllamaChatbotState extends State<OllamaChatbot> {
   bool loading = false;
   List<String> messages = [];
 
@@ -31,7 +31,7 @@ class _ChatbotState extends State<Chatbot> {
     final response = jsonDecode(result.body)['response'];
 
     setState(() {
-      messages.add(response);
+      messages.insert(0, response);
       loading = false;
     });
   }
@@ -47,21 +47,19 @@ class _ChatbotState extends State<Chatbot> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text("Hi I'm a chatbot. Type to see my responses..."),
-            ),
-            TextField(
-              onSubmitted: (value) => chat(value),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => Text(messages[index]),
+                itemCount: messages.length,
+                reverse: true,
+              ),
             ),
             Opacity(
               opacity: loading ? 1 : 0,
               child: CircularProgressIndicator(),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) => Text(messages[index]),
-                itemCount: messages.length,
-              ),
+            TextField(
+              onSubmitted: (value) => chat(value),
             ),
           ],
         ),
