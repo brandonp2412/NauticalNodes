@@ -41,6 +41,10 @@ class _OllamaChatbotState extends State<OllamaChatbot> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Nautical node - Chatbot"),
+        leading: Padding(
+          padding: EdgeInsets.all(8),
+          child: Image.asset('assets/ollama.png'),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
@@ -60,6 +64,10 @@ class _OllamaChatbotState extends State<OllamaChatbot> {
             ),
             TextField(
               onSubmitted: (value) => chat(value),
+              decoration: InputDecoration(
+                labelText: 'Type to chat...',
+                suffixIcon: Icon(Icons.send),
+              ),
             ),
           ],
         ),
