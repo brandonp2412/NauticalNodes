@@ -22,7 +22,7 @@ class _OllamaChatbotState extends State<OllamaChatbot> {
     final url = Uri.parse('http://localhost:11434/api/generate');
     final headers = {'Content-Type': 'application/json'};
     final body = json.encode({
-      'model': 'tinyllama',
+      'model': 'llama3.2',
       'prompt': message,
       'stream': false,
     });
