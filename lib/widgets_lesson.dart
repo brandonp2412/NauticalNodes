@@ -97,7 +97,7 @@ class BigTextExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "This text is very big!",
-      style: TextStyle(fontSize: 32),
+      style: TextStyle(fontSize: 64),
     );
   }
 }
