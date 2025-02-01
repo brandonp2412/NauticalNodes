@@ -9,7 +9,7 @@ class WidgetsLesson extends StatelessWidget {
       appBar: AppBar(
         title: Text("Widgets"),
       ),
-      body: CenterExample(),
+      body: TextExample(),
     );
   }
 }
@@ -188,21 +188,19 @@ class CenterExample extends StatelessWidget {
 //
 //
 
-class CenteredListExample extends StatelessWidget {
-  CenteredListExample({super.key});
+class ListExample extends StatelessWidget {
+  ListExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView(
-        shrinkWrap: true,
-        children: [
-          Center(child: Text("These items")),
-          Center(child: Text("Are placed")),
-          Center(child: Text("One after the other...")),
-          Center(child: Text("And in the center!")),
-        ],
-      ),
+    return ListView(
+      children: [
+        Text("These items"),
+        Text("Are placed"),
+        Text("One after the other..."),
+        Text("And if we want to"),
+        Text("We can scroll them"),
+      ],
     );
   }
 }
@@ -244,19 +242,21 @@ class CenteredListExample extends StatelessWidget {
 //
 //
 
-class ListExample extends StatelessWidget {
-  ListExample({super.key});
+class CenteredListExample extends StatelessWidget {
+  CenteredListExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Text("These items"),
-        Text("Are placed"),
-        Text("One after the other..."),
-        Text("And if we want to"),
-        Text("We can scroll them"),
-      ],
+    return Center(
+      child: ListView(
+        shrinkWrap: true,
+        children: [
+          Center(child: Text("These items")),
+          Center(child: Text("Are placed")),
+          Center(child: Text("One after the other...")),
+          Center(child: Text("And in the center!")),
+        ],
+      ),
     );
   }
 }
