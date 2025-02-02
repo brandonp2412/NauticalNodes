@@ -195,11 +195,15 @@ class ListExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Text("These items"),
-        Text("Are placed"),
-        Text("One after the other..."),
-        Text("And if we want to"),
-        Text("We can scroll them"),
+        Text("These items", style: TextStyle(fontSize: 32)),
+        Text("Are placed", style: TextStyle(fontSize: 32)),
+        Text("One after the other...", style: TextStyle(fontSize: 32)),
+        Text("And if we want to", style: TextStyle(fontSize: 32)),
+        Text("We can scroll them", style: TextStyle(fontSize: 32)),
+        Text("There are very many of them", style: TextStyle(fontSize: 32)),
+        Text("Look at them go!", style: TextStyle(fontSize: 32)),
+        Image.network("https://www.codesail.co.nz/walrus.webp"),
+        Image.network("https://www.codesail.co.nz/cat.webp"),
       ],
     );
   }
