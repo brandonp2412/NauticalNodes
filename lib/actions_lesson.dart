@@ -100,14 +100,14 @@ class SplittingOutActions extends StatelessWidget {
   SplittingOutActions({super.key});
 
   void sayHello(BuildContext context) {
-    showToast(context, "Why hello there!");
+    showToast(context, "Hello from inside a function!");
   }
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => sayHello(context),
-      child: Text("Say hi"),
+      child: Text("Say hi (split)"),
     );
   }
 }
