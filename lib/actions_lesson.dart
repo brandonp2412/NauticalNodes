@@ -10,7 +10,7 @@ class ActionsLesson extends StatelessWidget {
         title: Text("Actions lesson"),
       ),
       body: Center(
-        child: TapQuiz(),
+        child: BasicButton(),
       ),
     );
   }
