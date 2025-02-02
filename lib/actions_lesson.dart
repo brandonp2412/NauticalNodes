@@ -286,7 +286,7 @@ class BrokenQuiz extends StatelessWidget {
     // Fix it.
     return TextButton(
       onPressed: () => sayHello(context),
-      child: Text("Say my name"),
+      child: Text("This button is broken"),
     );
   }
 }
