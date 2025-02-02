@@ -167,7 +167,7 @@ class TapQuiz extends StatelessWidget {
     // What is shown on tap?
     return TextButton(
       onPressed: () => sayHello(context),
-      child: Text("Do greeting"),
+      child: Text("Tap Quiz 1"),
     );
   }
 }
