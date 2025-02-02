@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:nautical_nodes/loading_ellipsis.dart';
+import 'package:nautical_nodes/openai_key.dart';
 
 class OpenaiChatbot extends StatefulWidget {
   OpenaiChatbot({super.key});
@@ -17,18 +17,10 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
   List<String> answers = [];
   final textController = TextEditingController();
   final scrollController = ScrollController();
-  String? openAiKey;
 
   @override
   void initState() {
     super.initState();
-    setOpenAiKey();
-  }
-
-  void setOpenAiKey() async {
-    await dotenv.load();
-    openAiKey = dotenv.env['OPENAI_KEY'];
-    if (openAiKey == null) throw "Set your OPENAI_KEY in .env";
   }
 
   Future<String> completions(String message) async {
@@ -36,7 +28,7 @@ class _OpenaiChatbotState extends State<OpenaiChatbot> {
 
     final headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer $openAiKey',
+      'Authorization': 'Bearer $OPENAI_KEY',
     };
 
     var body = jsonEncode({
